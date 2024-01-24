@@ -6,6 +6,8 @@ The housing is made of cubic diamond with orthogonal (100) surfaces. The rods ar
 
 The structure was energy-minimized to allow (100) surfaces to render with the reconstructed geometry. The structure remained stable after 48 ps of MD simulation, with temperature from leftover vdW energy that the minimizer didn't eliminate (last image).
 
+<div align="center">
+
 ![XOR Gate Image 1](./Documentation/XORGate_Image1.jpg)
 
 ![XOR Gate Image 2](./Documentation/XORGate_Image2.jpg)
@@ -15,3 +17,5 @@ The structure was energy-minimized to allow (100) surfaces to render with the re
 ![XOR Gate Image 4](./Documentation/XORGate_Image4.jpg)
 
 ![XOR Gate Image MD Simulation](./Documentation/XORGate_MDSimulation.jpg)
+
+</div>
