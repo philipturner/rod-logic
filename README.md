@@ -51,3 +51,7 @@ The part was stable at 10 GHz, but still fell apart at 20 GHz. This shows that v
 ![Flywheel Image 2](./Documentation/Flywheel_Image2.jpg)
 
 ![Flywheel Image 3](./Documentation/Flywheel_Image3.jpg)
+
+## Minecraft Rod Logic Emulator
+
+This was originally planned to be a YouTube video, but plans were scaled back to save time. Filming and editing content takes a non-trivial amount of time. This effort is not directly related to the end goal.
