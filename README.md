@@ -70,4 +70,79 @@ The final test used GFN2-xTB to maximize accuracy and confidence that this was s
 
 The N-terminated rod was kinetically stable inside the housing. I trust this result, as it was both predicted to be stable beforehand and corroborated by an accurate quantum mechanical method (GFN2-xTB). I also measured the energy difference between the rod being inside vs detached from the housing. If the latter is favored, the housing will reject the rod. The device will not function correctly because the rod is ejected from the housing.
 
-> TODO: Final energy analysis
+```
+Singlepoint calculation of whole system with low-level method
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                     SUMMARY                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: total energy            -162.041974221135 Eh    ::
+:: gradient norm              0.993214593789 Eh/a0 ::
+
+Singlepoint calculation of inner region with low-level method
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                     SUMMARY                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: total energy             -37.608739606057 Eh    ::
+:: gradient norm              0.929836258917 Eh/a0 ::
+
+Singlepoint calculation of inner region with high-level method
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                     SUMMARY                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: total energy            -339.999156565982 Eh    ::
+:: gradient norm              1.002894360532 Eh/a0 ::
+:: HOMO-LUMO gap              5.359252848273 eV    ::
+
+ -------------------------------------------------
+| TOTAL ENERGY             -464.432391181059 Eh   |
+| GRADIENT NORM               0.008500429453 Eh/α |
+ -------------------------------------------------
+```
+
+Bound state: -162.04 + 37.61 - 340.00 = -464.43 Ha
+
+```
+Singlepoint calculation of whole system with low-level method
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                     SUMMARY                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: total energy            -161.915062344301 Eh    ::
+:: gradient norm              0.998496036159 Eh/a0 ::
+
+Singlepoint calculation of inner region with low-level method
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                     SUMMARY                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: total energy             -37.543272576790 Eh    ::
+:: gradient norm              0.930199287435 Eh/a0 ::
+
+Singlepoint calculation of inner region with high-level method
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                     SUMMARY                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: total energy            -339.990065593082 Eh    ::
+:: gradient norm              0.997945831572 Eh/a0 ::
+:: HOMO-LUMO gap              6.417806487753 eV    ::
+
+ -------------------------------------------------
+| TOTAL ENERGY             -464.361855360594 Eh   |
+| GRADIENT NORM               0.007629734036 Eh/α |
+ -------------------------------------------------
+```
+
+Unbound state: -161.92 + 37.54 - 339.99 = -464.36 Ha
+
+The unbound state is higher in energy by 0.07 Hartree. However, the energies for the GFN2-xTB system are about the same in each case. The energy difference might be an artifact of GFN-FF's inaccuracy. To test this hypothesis, observe the energy from GFN2-xTB alone (~340 Ha). It increases by 0.009 Ha upon entering the unbound state. The energy difference is still tens of zeptojoules. This seems significant enough for the problem in context.
+
+| Measurement | Atomic Units | SI Units |
+| ----------- | ------------ | -------- |
+| ONIOM       | +0.071 Ha    |  +308 zJ |
+| GFN2-xTB    | +0.009 Ha    |   +37 zJ |
+
+In conclusion, N termination has a high chance of succeeding in a real-world engineering effort. Whether I want to add parameters to simulate nitrogen, is another matter. It only decreases atom count by a marginal amount (single digit percent). There are more economical ways to get even greater size reductions. However, it could reduce sliding friction.
