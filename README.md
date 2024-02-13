@@ -51,3 +51,23 @@ The part was stable at 10 GHz, but still fell apart at 20 GHz. This shows that v
 ![Flywheel Image 2](./Documentation/Flywheel_Image2.jpg)
 
 ![Flywheel Image 3](./Documentation/Flywheel_Image3.jpg)
+
+## Nitrogen Termination
+
+As part of an effort to reduce atom count, I considered replacing some bridgehead carbons with phosphorus. This would reduce the number of hydrogen atoms, which are a large portion of the total atom count. The surface area of these parts is quite large. Hydrogens cover the surface area. After some preliminary sketching based on MM4 bond lengths and vdW radii, I realized phosphorus wouldn't improve compactness much. However, nitrogen would be useful. Nitrogen wasn't currently supported by MM4, but the parameters could be added if necessary.
+
+![Nitrogen Termination Image 1](./Documentation/NitrogenTermination_Image1.jpg)
+
+I predicted that N-terminating the logic rod could shrink each housing unit. The size reduction would be 1 lattice cell in two spatial directions. After putting the idea into atomic detail, I realized 0.5 lattice cells reduction was more realistic. I tested both the original C-H termination and the enhanced N-termination in GFN-FF, to check that they were roughly stable. The test system had 1400 atoms and took an entire minute to minimize. I then reduced the size to 800 atoms (~half). The system now took 1/4 as long to minimize because of GFN-FF's $O(n^2)$ scaling.
+
+The final test used GFN2-xTB to maximize accuracy and confidence that this was stable. GFN2-xTB has $O(n^3)$ scaling, but the electronic structure is self-consistent. In previous experiments, the structures were qualitatively much better than GFN-FF. In addition, GFN-FF would crash or go haywire for a number of unknown reasons. I encountered such issues with GFN-FF during this experiment, but luckily was able to work around them. To simulate a massive structure without the cost of cubic scaling, I would use ONIOM. Simulate the rod and inner housing surface with GFN2-xTB, everything else with GFN-FF.
+
+|         | GFN2-xTB | GFN-FF   |
+| :-----: | :------: | :------: |
+|  Atoms  | 196      | 832      |
+| Bound State   | ![Nitrogen Termination Image 3](./Documentation/NitrogenTermination_Image3.jpg) | ![Nitrogen Termination Image 2](./Documentation/NitrogenTermination_Image2.jpg) |
+| Unbound State | ![Nitrogen Termination Image 5](./Documentation/NitrogenTermination_Image5.jpg) | ![Nitrogen Termination Image 4](./Documentation/NitrogenTermination_Image4.jpg) |
+
+The N-terminated rod was kinetically stable inside the housing. I trust this result, as it was both predicted to be stable beforehand and corroborated by an accurate quantum mechanical method (GFN2-xTB). I also measured the energy difference between the rod being inside vs detached from the housing. If the latter is favored, the housing will reject the rod. The device will not function correctly because the rod is ejected from the housing.
+
+> TODO: Final energy analysis
