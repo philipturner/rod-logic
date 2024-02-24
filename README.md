@@ -146,3 +146,9 @@ The unbound state is higher in energy by 0.07 Hartree. However, the energies for
 | GFN2-xTB    | +0.009 Ha    |   +37 zJ |
 
 In conclusion, N termination has a high chance of succeeding in a real-world engineering effort. Whether I want to add parameters to simulate nitrogen, is another matter. It only decreases atom count by a marginal amount (single digit percent). There are more economical ways to get even greater size reductions. However, it could reduce sliding friction.
+
+## Structural Piece
+
+Prototype housing structure for the drive system. Dimensions 50 nm x 120 nm x 4 nm. 600,000 atoms, silicon carbide.
+
+![Structural Piece](./Documentation/StructuralPiece.jpg)
