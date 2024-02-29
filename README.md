@@ -157,7 +157,7 @@ Prototype housing structure for the drive system. Dimensions 50 nm x 120 nm x 4 
 
 This experiment tested a mechanism for actuating logic rods without rotary motion. It uses van der Waals and Pauli repulsion forces to move rods between two possible states. SiC was used in the actuation mechanism because of its higher Hamaker constant. Rigid body dynamics was used and the system consisted of 35,000 atoms. A 64-picosecond simulation took 26.3 seconds to compute.
 
-Some interesting things happened while simulating. First, the cutoff radius for vdW radius had to be changed. The default value is 1 nm to maximize simulation efficiency. However, that caused qualitative differences in behavior compared to larger cutoffs. 2 nm was used, providing a good tradeoff between compute cost and accuracy.
+Some interesting things happened while simulating. First, the cutoff radius for vdW forces had to be changed. The default value is 1 nm to maximize simulation efficiency. However, that caused qualitative differences in behavior compared to larger cutoffs. 2 nm was used, providing a good tradeoff between compute cost and accuracy.
 
 A FIRE energy minimizer was written from scratch, incorporating both FIRE 2.0 and ABC corrections. The minimizer had to be written because RBD lacks a built-in minimizer in MM4. MD is able to utilize L-BFGS from OpenMM. The parameters from the LAMMPS papers performed better than those in the INQ implementation. The overall source file was 235 lines, including data structure declarations and documentation comments.
 
