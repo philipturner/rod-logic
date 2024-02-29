@@ -152,3 +152,18 @@ In conclusion, N termination has a high chance of succeeding in a real-world eng
 Prototype housing structure for the drive system. Dimensions 50 nm x 120 nm x 4 nm. 600,000 atoms, silicon carbide.
 
 ![Structural Piece](./Documentation/StructuralPiece.jpg)
+
+## Rod Actuation
+
+This experiment tested a mechanism for actuating logic rods without rotary motion. It uses van der Waals and Pauli repulsion forces to move rods between two possible states. SiC was used in the actuation mechanism because of its higher Hamaker constant. Rigid body dynamics was used and the system consisted of 35,000 atoms. A 64-picosecond simulation took 26.3 seconds to compute.
+
+Some interesting things happened while simulating. First, the cutoff radius for vdW radius had to be changed. The default value is 1 nm to maximize simulation efficiency. However, that caused qualitative differences in behavior compared to larger cutoffs. 2 nm was used, providing a good tradeoff between compute cost and accuracy.
+
+A FIRE energy minimizer was written from scratch, incorporating both FIRE 2.0 and ABC corrections. The minimizer had to be written because RBD lacks a built-in minimizer in MM4. MD is able to utilize L-BFGS from OpenMM. The parameters from the LAMMPS papers performed better than those in the INQ implementation. The overall source file was 235 lines, including data structure declarations and documentation comments.
+
+Energy minimization is generally used to improve a scene prior to dynamical simulation. The next part of the code was the rigid body dynamics simulation. RBD simulators are often numerically unstable with a fixed timestep. The energy explodes quickly, sending parts into nonphysical overlapping positions and exorbitant velocities. One method to fix this is varying the timestep. Give a certain tolerance for energy drift. When the tolerance is exceeded, throw away the computations from the last timestep. Repeat that timestep with half the time interval. If it still fails, retry with an even shorter timestep.
+
+A more convenient alternative is keeping the timestep fixed, but damping the kinetic energy. The damping emulates thermalization of kinetic energy from friction, which happens automatically in MD simulations. This experiment decreased the absolute value of each rod's momentum by 0.98x every 40 femtoseconds. It counteracted energy drift and kept the simulation numerically stable. However, the value of damping affects the simulated gate switching time. With 0.98x / 40 fs, the rods could switch in 23 ps. With 0.95x / 40 fs, the switching time had to rise to ~46 ps. Otherwise, the device would fail to function correctly.
+
+Here is a rough animation of the clock cycle. Since we are doing reversible computing, there are two major phases. The forward phase (first three images; 0 - 23 ps) and the reverse phase (next two images; 23 - 46 ps). The final image (64 ps) shows what happens if the SiC drive wall moves beyond the designed range of motion. The drive wall's speed is 100 m/s during each phase.
+
