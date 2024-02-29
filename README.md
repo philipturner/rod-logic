@@ -167,3 +167,14 @@ A more convenient alternative is keeping the timestep fixed, but damping the kin
 
 Here is a rough animation of the clock cycle. Since we are doing reversible computing, there are two major phases. The forward phase (first three images; 0 - 23 ps) and the reverse phase (next two images; 23 - 46 ps). The final image (64 ps) shows what happens if the SiC drive wall moves beyond the designed range of motion. The drive wall's speed is 100 m/s during each phase.
 
+![Rod Actuation Frame 1](./Documentation/RodActuation_Frame1.jpg)
+
+![Rod Actuation Frame 2](./Documentation/RodActuation_Frame2.jpg)
+
+![Rod Actuation Frame 3](./Documentation/RodActuation_Frame3.jpg)
+
+![Rod Actuation Frame 4](./Documentation/RodActuation_Frame4.jpg)
+
+![Rod Actuation Frame 5](./Documentation/RodActuation_Frame5.jpg)
+
+![Rod Actuation Frame 6](./Documentation/RodActuation_Frame6.jpg)
