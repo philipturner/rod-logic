@@ -132,7 +132,7 @@ struct FIRE {
         maxTorque = max(maxTorque, normTorque)
       }
       
-      if maxForce < 1 && maxTorque < 1 {
+      if maxForce < forceTolerance && maxTorque < torqueTolerance {
         result.convergedIterationID = frameID
         break
       }
