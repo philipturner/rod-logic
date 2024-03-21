@@ -8,7 +8,7 @@ The data and code are permissively licensed. This makes it an open alternative t
 
 ## Terminology
 
-Rod logic refers specifically to diamond and crystalline group (IV) carbides. It is presently uncertain whether crystalline elemental silicon can be manufactured with near-term mechanosynthesis. Although one could build related mechanisms out of DNA origami, that would likely have inferior efficiency. Potentially, exactly equal to modern "3 nm" transistors. It would be equivalent to 3D printing macroscale models of the mechanical machinery.
+Rod logic is made of diamond, crystalline group (IV) carbides, or crystalline elemental silicon. Although one could build related mechanisms out of DNA origami, that would likely have inferior efficiency. Potentially, exactly equal to modern "3 nm" transistors. It would be equivalent to 3D printing macroscale models of the mechanical machinery.
 
 In the context of rod logic, "dopants" are lattice impurities inserted to improve the mechanical properties. This is different from dopants in semiconductors, which improve the electronic properties. For example, a phosphorus dopant would harm the mechanical properties of a rigid elemental silicon lattice. The unpaired valence electron would make the nanomachine more chemically reactive. A mechanical machine that has formed an unwanted chemical bond may not function at all.
 
