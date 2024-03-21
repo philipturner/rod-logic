@@ -1,5 +1,17 @@
 # Rod Logic
 
+This is a technical document containing lab notes and insights from building rod logic. Although an exploratory engineering work, its primary purpose is teaching the reader how to _do_ things. How to reproduce the general design/analysis methods in similar projects.
+
+This document is a computational and theoretical work, covering how to model and simulate structures. The content makes the design of large computer systems tractable. A related task, is then implementing the designed computer systems in experiment. Experimental validation is beyond the scope of the author's research and capabilities. However, it is hoped that this knowledge can benefit an experimental effort. Rod logic could be a more compact/efficient alternative to nanoelectronics, suitable for automating nanofactories during a bootstrapping effort. Without knowledge of rod logic, one may waste considerable time building large "single-molecule" transistors in experiment.
+
+The data and code are permissively licensed. This makes it an open alternative to Molecular Link Logic, which is patented by CBN Nano Technologies. In addition, rod logic is more compact and potentially more efficient. It does not require rotary mechanisms, making it more feasible to manufacture with primitive/limited mechanosynthesis capabilities. The only downside may be sliding friction, but the Landauer limit is a more pressing concern at proposed operation speeds. Note that with electronic transistors, the energy dissipated (~1 eV) is so large that the Landauer limit is not even considered.
+
+## Terminology
+
+Rod logic refers specifically to diamond and crystalline group (IV) carbides. It is presently uncertain whether crystalline elemental silicon can be manufactured with near-term mechanosynthesis. Although one could build related mechanisms out of DNA origami, that would likely have inferior efficiency. Potentially, exactly equal to modern "3 nm" transistors. It would be no different than 3D printing macroscale models of the mechanical machinery.
+
+In the context of rod logic, "dopants" are lattice impurities inserted to improve the mechanical properties. This is different from dopants in semiconductors, which improve the electronic properties. For example, a phosphorus dopant would harm the mechanical properties of a rigid elemental silicon lattice. The unpaired valence electron would make the nanomachine more chemically reactive. A mechanical machine that has formed an unwanted chemical bond may not function at all.
+
 ## XOR Gate
 
 The housing is made of cubic diamond with orthogonal (100) surfaces. The rods are made of lonsdaleite. The lattice constant of the rods misaligns with the housing, providing more flexibility to fine-tune the vdW potential. However, knobs must be placed irregularly. Their separations aren't evenly divisible by the cubic diamond lattice constant.
@@ -178,3 +190,39 @@ Here is a rough animation of the clock cycle. Since we are doing reversible comp
 ![Rod Actuation Frame 5](./Documentation/RodActuation_Frame5.jpg)
 
 ![Rod Actuation Frame 6](./Documentation/RodActuation_Frame6.jpg)
+
+## Equalizing Strain at Knob Sites
+
+To transmit signals in all 3 dimensions, a lonsdaleite rod must permit knobs on the +Y and +Z sides\*. The +Y sides are decorated frequently in previous experiments. Y-oriented knobs always form six-membered rings.
+
+> \*X is defined as the axis where the rod has the longest spatial dimension.
+
+Z-oriented knobs pose an issue. They must contain 5-membered rings. This introduces unwanted warping in the +Z direction. To make the computer easier to manufacture (when inserting rods into shafts), or potentially for other reasons, one ought to avoid such warping.
+
+Silicon Dopant Site (Front View):
+
+![](./Documentation/KnobStrain_SiliconDopantLocationFrontView.jpg)
+
+Silicon Dopant Site (Top View):
+
+![](./Documentation/KnobStrain_SiliconDopantLocationTopView.jpg)
+
+One should be careful to not overshoot, and cause strain in the exact opposite direction to the initial warping. This would be the case if Ge was chosen as the dopant. It causes unacceptable strain in the -Z direction.
+
+In the images below, a "carbon" dopant is equivalent to having no dopant at all. The intrinsic lattice is made of carbon atoms. The "carbon" dopant reveals the structure without proper doping to equalize strain.
+
+Dopant Choices (Top View):
+
+![](./Documentation/KnobStrain_DopantElementChoice.jpg)
+
+Dopant Choices (Side View):
+
+|   C   |   Si   |   Ge   |
+| :---: | :----: | :----: |
+| ![](./Documentation/KnobStrain_DopantCarbonSideView.jpg) | ![](./Documentation/KnobStrain_DopantSiliconSideView.jpg) | ![](./Documentation/KnobStrain_DopantGermaniumSideView.jpg)  |
+
+When fixing strain in one dimension, it is easy to accidentally cause strain in a different dimension. One could even cause twisting along an axis that should be perfectly rectangular. There are many cases where all major modes can be suppressed simultaneously, to within acceptable design margins. Designing the dopants requires both energy minimization and molecular dynamics. MD can reveal ambient vibrational modes along a warping direction, which were missed by energy minimization.
+
+Alternating Vertical Placement (Front View):
+
+![](./Documentation/KnobStrain_AlternatingVerticalDopantPlacement.jpg)
