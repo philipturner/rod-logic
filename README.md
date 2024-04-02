@@ -226,3 +226,13 @@ When fixing strain in one dimension, it is easy to accidentally cause strain in 
 Alternating Vertical Placement (Front View):
 
 ![](./Documentation/KnobStrain_AlternatingVerticalDopantPlacement.jpg)
+
+## Second Iteration of Flywheel Design
+
+TODO: Link to YouTube video
+
+![](./Documentation/Flywheel2_Image1.jpg)
+
+![](./Documentation/Flywheel2_Image2.jpg)
+
+![](./Documentation/Flywheel2_Image3.jpg)
