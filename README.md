@@ -229,10 +229,14 @@ Alternating Vertical Placement (Front View):
 
 ## Second Iteration of Flywheel Design
 
-TODO: Link to YouTube video
+YouTube video: https://www.youtube.com/watch?v=xSOS9CYfYX8
 
 ![](./Documentation/Flywheel2_Image1.jpg)
 
 ![](./Documentation/Flywheel2_Image2.jpg)
 
 ![](./Documentation/Flywheel2_Image3.jpg)
+
+![](./Documentation/Flywheel2_Image4.jpg)
+
+![](./Documentation/Flywheel2_Image5.jpg)
