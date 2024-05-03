@@ -1,5 +1,13 @@
 # Rod Logic
 
+Presentation:
+- [Video](https://youtu.be/QdHzHipufsI)
+- [Slides (PDF)](./Presentation/Presentation.pdf)
+- [Slides (PPTX)](./Presentation/Presentation.pptx) with speaker notes
+- [GIF](./Presentation/half-adder-drive-wall-animated.gif) for the drive wall animation
+
+## Overview
+
 This is a technical document containing lab notes and insights from building rod logic. Although an exploratory engineering work, its primary purpose is teaching the reader how to _do_ things. How to reproduce the general design/analysis methods in similar projects.
 
 This document is a computational and theoretical work, covering how to model and simulate structures. The content makes the design of large computer systems tractable. A related task, is then implementing the designed computer systems in experiment. Experimental validation is beyond the scope of the author's research and capabilities. However, it is hoped that this knowledge can benefit an experimental effort. Rod logic could be a more compact/efficient alternative to nanoelectronics, suitable for automating nanofactories during a bootstrapping effort.
